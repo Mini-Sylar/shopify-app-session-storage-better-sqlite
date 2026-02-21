@@ -1,6 +1,7 @@
 import { defineConfig } from 'tsdown'
 
 export default defineConfig({
-  exports: true
-  // ...config options
+  exports: true,
+  entry: './src/better-sqlite.ts',
+
 })
