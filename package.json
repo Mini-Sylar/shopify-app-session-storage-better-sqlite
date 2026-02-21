@@ -5,7 +5,7 @@
     "."
   ],
   "type": "module",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A session storage implementation for Shopify apps using better-sqlite3.",
   "author": "Mini-Sylar <minisylar3@gmail.com>",
   "license": "MIT",
