@@ -1,0 +1,2 @@
+# validate conventional commit
+pnpm run commitlint -- --edit "$1"

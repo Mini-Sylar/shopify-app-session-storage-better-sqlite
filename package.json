@@ -1,0 +1,92 @@
+{
+  "name": "@minisylar/shopify-app-session-storage-better-sqlite",
+  "private": false,
+  "workspaces": [
+    "."
+  ],
+  "type": "module",
+  "version": "1.0.0",
+  "description": "A session storage implementation for Shopify apps using better-sqlite3.",
+  "author": "Mini-Sylar <minisylar3@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/mini-sylar/shopify-app-session-storage-better-sqlite#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mini-sylar/shopify-app-session-storage-better-sqlite.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mini-sylar/shopify-app-session-storage-better-sqlite/issues"
+  },
+  "exports": {
+    ".": "./dist/better-sqlite.mjs",
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/better-sqlite.d.mts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsdown src/better-sqlite.ts",
+    "dev": "tsdown --watch",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "lint": "oxlint 'src/**/*.ts' --fix",
+    "commitlint": "commitlint --edit",
+    "prepare": "husky",
+    "release": "semantic-release",
+    "prepublishOnly": "pnpm run build"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^20.4.2",
+    "@commitlint/config-conventional": "^20.4.2",
+    "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/npm": "^13.1.4",
+    "@semantic-release/release-notes-generator": "^14.1.0",
+    "@shopify/shopify-api": "^12.3.0",
+    "@shopify/shopify-app-session-storage": "^4.0.5",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^25.3.0",
+    "bumpp": "^10.4.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "oxlint": "^1.49.0",
+    "semantic-release": "^25.0.3",
+    "tsdown": "^0.20.3",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.6.2"
+  },
+  "lint-staged": {
+    "src/**/*.ts": [
+      "npm run lint",
+      "npm run test -- --run --silent"
+    ]
+  },
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "package.json",
+            "CHANGELOG.md"
+          ],
+          "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+        }
+      ]
+    ]
+  },
+  "peerDependencies": {
+    "@shopify/shopify-api": "^12.3.0",
+    "@shopify/shopify-app-session-storage": "^4.0.5"
+  }
+}
