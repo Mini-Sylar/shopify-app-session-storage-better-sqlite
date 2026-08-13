@@ -6,16 +6,17 @@
   ],
   "type": "module",
   "version": "2.0.0",
+  "packageManager": "pnpm@11.9.0",
   "description": "A session storage implementation for Shopify apps using better-sqlite3.",
   "author": "Mini-Sylar <minisylar3@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/mini-sylar/shopify-app-session-storage-better-sqlite#readme",
+  "homepage": "https://github.com/Mini-Sylar/shopify-app-session-storage-better-sqlite#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mini-sylar/shopify-app-session-storage-better-sqlite.git"
+    "url": "git+https://github.com/Mini-Sylar/shopify-app-session-storage-better-sqlite.git"
   },
   "bugs": {
-    "url": "https://github.com/mini-sylar/shopify-app-session-storage-better-sqlite/issues"
+    "url": "https://github.com/Mini-Sylar/shopify-app-session-storage-better-sqlite/issues"
   },
   "exports": {
     ".": "./dist/better-sqlite.mjs",
@@ -33,7 +34,7 @@
     "dev": "tsdown --watch",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
-    "lint": "oxlint 'src/**/*.ts' --fix",
+    "lint": "oxlint src --fix",
     "commitlint": "commitlint --edit",
     "prepare": "husky",
     "release": "semantic-release",
